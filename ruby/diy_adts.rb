@@ -65,11 +65,13 @@ class Map
     else
       @map[pair_idx][1] = value
     end
+    #refractored
+    # pair_idx ? @map[pair_idx][1] = value : @map << [key, value]
     [key, value]
   end
 
   def lookup(key) #returns value of key that is being looked up
-    @map.each do { |pair| return pair[1] if pair[0] == key }
+    @map.each { |pair| return pair[1] if pair[0] == key }
   end
 
   def remove(key)
