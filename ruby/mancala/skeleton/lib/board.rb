@@ -19,9 +19,11 @@ class Board
   end
 
   def valid_move?(start_pos)
-    if start_pos == "exit"
-      exit
-    end
+    #how do I break out of the terminal, before finishing the game
+    # or closing the terminal
+    # if start_pos == "exit"
+    #   exit
+    # end
 
     if start_pos < 0 || start_pos > 12
       raise "Nope, invalid starting cup"
@@ -70,6 +72,12 @@ class Board
     else
       #ended on a cup with stones inside
       ending_cup_idx
+      #how does returning this run make_move again
+      #in mancala.rb
+      #if move_result isn't switch or prompt
+      #then
+      #move_result = @board.make_move(move_result, current_player.name)
+      #therefore running make move again
     end
   end
 
