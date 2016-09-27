@@ -1,5 +1,7 @@
-#least recently used
-
+# Least
+# Recently
+# Used
+# Cache
 
 class LRUCache
     def initialize(size)
