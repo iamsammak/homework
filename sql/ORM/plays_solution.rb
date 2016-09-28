@@ -39,7 +39,7 @@ class Play
     playwright = Playwright.find_by_name(name)
     raise "#{name} not found in DB" unless playwright
 
-    plays = PlayDBConnection.instance.execute(<<-SQL, playwright.id)
+    plays = PlayDBConnection.instance.execute(<<-SQL, playwright_id)
       SELECT
         *
       FROM
