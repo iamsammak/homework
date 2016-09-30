@@ -144,8 +144,8 @@ class House
 
   def better_seeds_query
     plants = self.plants.includes(:seeds)
-    seeds = []
 
+    seeds = []
     plants.each do |plant|
       seeds << plant.seeds
     end
@@ -213,7 +213,7 @@ class Route
           # 2' => ['Ed Michaels', 'Lisa Frank', 'Sharla Alegria']}
 
   def better_drivers_query
-    buses = self.buses.include?(:drivers)
+    buses = self.buses.includes(:drivers)
 
     all_drivers = {}
     buses.each do |bus|
