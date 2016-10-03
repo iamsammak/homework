@@ -13,6 +13,7 @@ class BooksController < ApplicationController
     book = Book.new(book_params)
     if book.save
       redirect_to books_url
+      #had a type and it was causing an error
     else
       flash.now[:errors] = book.erros.full_messages
       render :new
