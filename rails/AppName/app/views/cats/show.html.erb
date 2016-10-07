@@ -1,0 +1,17 @@
+<h1> <%= @cat.name %> </h1>
+
+<table>
+  <tr>
+    <th>Attribute</th>
+    <th>Value</th>
+  </tr>
+
+  <% [:age, :birth_date, :color, :sex].each do |attr_name| %>
+    <tr>
+      <% textified = attr_name.to_s.split("_") %>
+      <% textified.map!(&:capitalize) %>
+      <td> <%= textified.join(" ") %></td>
+      <td> <%= @cat.send(attr_name) %></td>
+    </tr>
+  <% end %>
+</table>
