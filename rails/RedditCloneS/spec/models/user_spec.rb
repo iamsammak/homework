@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 require 'rails_helper'
 
 require 'spec_helper'
@@ -44,11 +56,11 @@ RSpec.describe User, type: :model do
 
   describe "#is_password?" do
     it "verifies a password is correct" do
-      expect(user.is_password?("good_password")).to be true
+      expect(user.is_password?("password")).to be true
     end
 
     it "verifies a password is not correct" do
-      expect(user.is_password?("bad_password")).to be false
+      expect(user.is_password?("woooooooooo")).to be false
     end
   end
 
@@ -56,11 +68,11 @@ RSpec.describe User, type: :model do
     before { user.save! }
 
     it "returns user given good credentials" do
-      expect(User.find_by_credentials("jonathan", "good_password")).to eq(user)
+      expect(User.find_by_credentials("sam", "password")).to eq(user)
     end
 
     it "returns nil given bad credentials" do
-      expect(User.find_by_credentials("jonathan", "bad_password")).to eq(nil)
+      expect(User.find_by_credentials("sam", "the_best_password")).to eq(nil)
     end
   end
 end
