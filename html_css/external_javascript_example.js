@@ -2,7 +2,7 @@
 
 window.onload = function() {
   (function reviewFormListener() {
-    form = document.getElementById("review-form");
+    let form = document.getElementById("review-form");
     form.addEventListener("submit", placeReview);
   })();
 };
@@ -30,7 +30,8 @@ var createReview = function(event) {
   expertiseParagraph.appendChild(expertise);
   reviewParagraph.appendChild(review);
 
-  var reviewElements = [nameHeader, ratingParagraph, expertiseParagraph, reviewParagraph];
+  var reviewElements = [nameHeader,
+    ratingParagraph, expertiseParagraph, reviewParagraph];
   var reviewElement = document.createElement('div');
   reviewElements.forEach(function(el) {
     reviewElement.appendChild(el);

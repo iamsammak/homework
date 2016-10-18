@@ -80,6 +80,7 @@ Elephant.prototype.paradeHelper = function (elephant) {
 
 
 //phase IV closures
+// REVIEW this one
 
 function dinerBreakfast() {
   let order = "I'd like scrambled eggs and bacon please.";

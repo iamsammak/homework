@@ -35,7 +35,34 @@ ol {
   list-style: upper-roman inside;
 }
 
+ol li:nth-of-type(2n) {
+  background-color: whitesmoke;
+}
+
 .user_review h4 {
   font-size: 18px;
   font-weight: bold;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  width: 27px;
+  height: 27px;
+  background-image: url(./stars.png);
+  color: gold;
+  vertical-align: bottom;
+}
+
+input:last-child {
+  background-color: gold;
+}
+
+input:last-child:hover {
+  -webkit-filter: brightness(90%);
+}
+
+h2 + .user_review {
+  border-top: 1px solid black;
 }
