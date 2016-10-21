@@ -1,3 +1,5 @@
+// WATCH OUT FOR TYPOS AND uppercase verses lowercase and camelcase 
+
 document.addEventListener("DOMContentLoaded", () => {
   // toggling restaurants
 
