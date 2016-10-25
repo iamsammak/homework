@@ -23,8 +23,7 @@ View.prototype.exercise1 = function () {
   //Result: Every square should turn orange (we already have a CSS rule)
 
   //your code here!
-  // $('.square').css("background-color", "orange");
-  $('.square').addClass("orange");
+  $('li').addClass("orange");
 };
 
 View.prototype.exercise2 = function () {
@@ -32,9 +31,9 @@ View.prototype.exercise2 = function () {
   //Result: Every square vanishes
 
   //your code here!
-  // $('.square').removeClass("square");
-  //turns the grid into dots, long list of undecorated lis
-  $('.square').remove();
+  $('li').attr("style", "display: none");
+  // solution
+  // $('.square').remove();
 };
 
 View.prototype.exercise3 = function () {
@@ -42,10 +41,8 @@ View.prototype.exercise3 = function () {
   //Result: An <h1> with the text 'i love jquery' appears under the grid.
 
   //your code here!
-  // $('h1').addClass("<title>I love jQuery</title>"); // my try
-  const $h1Top = $("<h1>").text("Top of the Grid");
-  const $h1 = $("<h1>").text("I love jQuery");
-  $("#easel").prepend($h1Top);
+  const $h1 = $("<h1>");
+  $h1.text('I Love jQuery');
   $("#easel").append($h1);
 };
 
@@ -54,8 +51,9 @@ View.prototype.exercise4 = function () {
   //Result: Your name appears in every other square.
 
   //your code here!
-  $('.square:nth-child(even)').text("Sam");
-  $('.square:nth-child(odd)').css("background-color", "teal");
+  const $evenSquares = $(".square:nth-child(even)");
+  $evenSquares.text("Sam");
+  $evenSquares.attr("style", "font-size: 12px");
 };
 
 View.prototype.exercise5 = function () {
@@ -67,11 +65,16 @@ View.prototype.exercise5 = function () {
   //  'data-pos' of every square
 
   //your code here!
-  $('.square').on("click", eventc => {
-    const $sq = $(eventc.currentTarget);
-    alert($sq.attr("data-pos"));
+  // my attempt
+  // const $squares = $('.square');
+  // $squares.on("click", (square) => {
+  //   const dataPos = square.data("pos");
+  //   alert(dataPos);
+  // });
+  $('.square').on("click", event => {
+    const $currentSquare = $(event.currentTarget);
+    alert($currentSquare.attr("data-pos"));
   });
-  // alert("hi");
 };
 
 View.prototype.exercise6 = function () {
@@ -82,8 +85,12 @@ View.prototype.exercise6 = function () {
   //hint: use window._randomColorString() (defined at top) to get a random color!
 
   //your code here!
+  // $(selector).each( function(index, el) {} );
   $('.square').each( (idx, el) => {
-    let $sq = $(el);
+    // each el is a DOM HTMLElement
+    var $sq = $(el);
+    // console.log(window._randomColorString());
+    // debugger;
     $sq.css("background-color", _randomColorString());
   });
 };
@@ -96,9 +103,11 @@ View.prototype.exercise7 = function(){
   //rainbow.
 
   //your code here!
-  $('#easel').on("mouseenter", ".square", eventc => {
-    const $sq = $(eventc.currentTarget);
-    console.log($sq.css("background-color"));
+  $('.square').each( (idx, el) => {
+    var $sq = $(el);
+    $sq.on("mouseover", event => {
+      console.log(($sq.css("background-color")));
+    });
   });
 };
 
