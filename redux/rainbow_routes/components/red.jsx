@@ -27,11 +27,11 @@ class Red extends React.Component {
   }
 
   addOrange() {
-    this.props.router.push('/orange');
+    this.props.router.push('/red/orange');
   }
 
   addYellow() {
-    this.props.router.push('/yellow');
+    this.props.router.push('/red/yellow');
   }
 }
 

@@ -25619,12 +25619,12 @@
 	  }, {
 	    key: 'addOrange',
 	    value: function addOrange() {
-	      this.props.router.push('/orange');
+	      this.props.router.push('/red/orange');
 	    }
 	  }, {
 	    key: 'addYellow',
 	    value: function addYellow() {
-	      this.props.router.push('/yellow');
+	      this.props.router.push('/red/yellow');
 	    }
 	  }]);
 	
@@ -25778,7 +25778,7 @@
 	  }, {
 	    key: 'addIndigo',
 	    value: function addIndigo() {
-	      this.props.router.push('/indigo');
+	      this.props.router.push('/blue/indigo');
 	    }
 	  }]);
 	
